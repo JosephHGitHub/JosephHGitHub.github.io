@@ -20,10 +20,11 @@
 
     <!-- Custom styles for this template -->
     <link href="css/grayscale.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body id="page-top">
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -54,7 +55,7 @@
       <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
           <h1 class="mx-auto my-0 text-uppercase">Joseph's Favorite</h1>
-          <h2 class="text-white-50 mx-auto mt-2 mb-5">Food Music and Fire</h2>
+          <h2 class="text-white-50 mx-auto mt-2 mb-5 lead">Food Music and Fire</h2>
           <a href="#about" class="btn btn-primary js-scroll-trigger">Choose Wisely</a>
         </div>
       </div>
@@ -138,8 +139,11 @@
             <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
             <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
 
-            <form class="form-inline d-flex">
-              <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
+            <form method="POST" action="https://formspree.io/JpHarding23@gmail.com">
+              <input type="text" name="name" class="form-control" id="inputName" placeholder="*
+              as the required field" required>
+              <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" name = "email" placeholder="Enter email address...">
+
               <button type="submit" class="btn btn-primary mx-auto">Subscribe</button>
             </form>
 
@@ -153,7 +157,7 @@
     <form method="POST" action="https://formspree.io/JpHarding23@gmail.com">
     <div class="form-group">
       <label for="inputName">Name*</label>
-      <input type="text" name="name" class="form-control" id="inputName" placeholder=“*
+      <input type="text" name="name" class="form-control" id="inputName" placeholder="*
       as the required field" required>
     </div>
 
@@ -244,6 +248,25 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
+
+    <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+    } else {
+    document.getElementById("myBtn").style.display = "none";
+    }
+    }
+    function topFunction() {
+document.body.scrollTop = 0;
+document.documentElement.scrollTop = 0;
+document.getElementsByClassName('lead')[0].style.color = "blue";
+document.getElementsByClassName('lead')[0].style.fontSize = "3em";
+document.getElementsByClassName('lead')[0].innerHTML = 'Thank you';
+}
+</script>
 
   </body>
 
