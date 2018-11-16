@@ -154,7 +154,8 @@
 
     <div class="container" style="margin-bottom: 20px; padding-bottom:
     10px; padding-top: 10px;">
-    <form method="POST" action="https://formspree.io/JpHarding23@gmail.com">
+    <!--<form method="POST" action="https://formspree.io/JpHarding23@gmail.com">-->
+      <form id="add-user-input">
     <div class="form-group">
       <label for="inputName">Name*</label>
       <input type="text" name="name" class="form-control" id="inputName" placeholder="*
@@ -171,7 +172,9 @@
       <textarea class="form-control" id="exampleTextarea" name="message"
       rows="3"></textarea>
     </div>
-      <button type="submit" class="btn btn-primary">Send</button>
+      <!--<button type="submit" class="btn btn-primary">Send</button> -->
+      <button class="btn btn-primary">Send</
+      button>
     </form>
     </div>
 
@@ -239,7 +242,21 @@
       </div>
     </footer>
 
-    <!-- Bootstrap core JavaScript -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAr2_jTPFCLCuK4IoJ5BDpP70jM1WQA0DQ",
+        authDomain: "joseph-project-7849e.firebaseapp.com",
+        databaseURL: "https://joseph-project-7849e.firebaseio.com",
+        projectId: "joseph-project-7849e",
+        storageBucket: "joseph-project-7849e.appspot.com",
+        messagingSenderId: "865322552914"
+      };
+      firebase.initializeApp(config);
+    </script>
+  <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -250,24 +267,25 @@
     <script src="js/grayscale.min.js"></script>
 
     <script>
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
-    function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("myBtn").style.display = "block";
-    } else {
-    document.getElementById("myBtn").style.display = "none";
-    }
-    }
-    function topFunction() {
-document.body.scrollTop = 0;
-document.documentElement.scrollTop = 0;
-document.getElementsByClassName('lead')[0].style.color = "blue";
-document.getElementsByClassName('lead')[0].style.fontSize = "3em";
-document.getElementsByClassName('lead')[0].innerHTML = 'Thank you';
-}
-</script>
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          document.getElementById("myBtn").style.display = "block";
+        } else {
+          document.getElementById("myBtn").style.display = "none";
+        }
+      }
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        document.getElementsByClassName('lead')[0].style.color = "blue";
+        document.getElementsByClassName('lead')[0].style.fontSize = "3em";
+        document.getElementsByClassName('lead')[0].innerHTML = 'Thank you';
+      }
+  </script>
 
+    <script src="js/addData.js"></script>
   </body>
 
 </html>
